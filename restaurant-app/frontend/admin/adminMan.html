@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Restaurant Management</title>
+    <link rel="stylesheet" href="../css/admin/adminMan.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Restaurant Management</h1>
+
+        <!-- Primary Search Bar -->
+        <div class="primary-search">
+            <input type="text" id="primary-search-input" placeholder="Search for Restaurants or Food Items" class="search-input">
+            <button class="search-button" onclick="primarySearch()">Search</button>
+            <button class="view-all-button" onclick="viewAllRestaurants()">See All Restaurants</button>
+        </div>
+
+        <div class="admin-section">
+            <h2>Restaurant Requests</h2>
+            <div class="search-container">
+                <input type="text" id="restaurant-search" placeholder="Search Restaurant by Name" class="search-input" oninput="searchRestaurants()">
+                <button class="search-button" onclick="searchRestaurants()">Search</button>
+            </div>
+            <table id="restaurant-requests">
+                <thead>
+                    <tr>
+                        <th>Restaurant Name</th>
+                        <th>Owner</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="request-list">
+                    <!-- Dynamic rows will be added here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-section">
+            <h2>Manage Food Menu</h2>
+            <div class="search-container">
+                <input type="text" id="menu-search" placeholder="Search Food Item by Name" class="search-input" oninput="searchFoodItems()">
+                <button class="search-button" onclick="searchFoodItems()">Search</button>
+            </div>
+            <table id="menu-management">
+                <thead>
+                    <tr>
+                        <th>Food Item</th>
+                        <th>Restaurant</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="menu-list">
+                    <!-- Dynamic rows will be added here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="..//js/admin/adminMan.js"></script>
+</body>
+</html>

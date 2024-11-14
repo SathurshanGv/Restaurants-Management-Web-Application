@@ -1,0 +1,356 @@
+/* General body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #5f82ff;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form container */
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for the form container */
+.form-container:hover {
+    transform: scale(1.02); /* Slightly enlarges the form */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Adds a deeper shadow */
+    background-color: #f0f9ff; /* Changes the background color to a soft blue */
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 97%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: rgba(245, 245, 245, 0.9);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #5f82ff;
+    box-shadow: 0 0 5px rgba(95, 130, 255, 0.5);
+}
+
+/* Button styling */
+.submit-btn,
+#addFoodItemBtn {
+    background-color: #41a4ff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(65, 164, 255, 0.4);
+}
+
+.submit-btn:hover,
+#addFoodItemBtn:hover {
+    background-color: #0099ff;
+    transform: scale(1.05);
+}
+
+.submit-btn:active,
+#addFoodItemBtn:active {
+    transform: scale(0.95);
+}
+
+/* Menu items section */
+.food-item {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.9);
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Food item input */
+.food-item input {
+    flex: 1;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-width: 250px;
+}
+
+/* Remove button for each food item */
+.remove-food-item-btn {
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.remove-food-item-btn:hover {
+    background-color: #ff3b3b;
+}
+
+/* Image container for file uploads */
+.image-uploads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-preview-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #5f82ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.upload-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #5f82ff;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-btn:hover {
+    color: #0099ff;
+}
+
+/* Image remove button for uploaded images */
+.image-preview-container .remove-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image-preview-container .remove-btn:hover {
+    background-color: #ff3b3b;
+}
+
+/* Opening hours section */
+.hours-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hours-container .day {
+    flex: 1 1 45%;
+    background-color: rgba(245, 245, 245, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hours-container .time-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #5f82ff;
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #f9f9f9;
+    text-decoration: underline;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .food-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .remove-food-item-btn {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+    }
+}
+/* General error styling */
+.error {
+    border: 2px solid red;
+}
+
+.error-icon {
+    margin-left: 5px;
+    color: red;
+    font-size: 16px;
+}
+/* Bubble Notification Styling */
+.bubble-notification {
+    position: absolute;
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 40px; /* Adjust based on where you want the bubble */
+    left: 0;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Add position relative to the parent element to align the bubble properly */
+.form-group {
+    position: relative;
+}
+
+/* Error input styling */
+.error {
+    border: 2px solid red;
+}
+/* .slideThree */
+.slideThree {
+  width: 80px;
+  height: 26px;
+  background: #333;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+  &:after {
+    content: ''; 
+    color: #000;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+  }
+  &:before {
+    content: 'OPEN'; 
+    color: $activeColor;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+  }
+  label {
+    display: block;
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label {
+      left: 43px;
+    }
+  }    
+}
+/* end .slideThree */
+/* Add this new CSS class for toggle status text */
+.toggle-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Include existing CSS here */

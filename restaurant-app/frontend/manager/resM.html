@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Manager - Add Restaurant</title>
+    <link rel="stylesheet" href="..//css/manager/resM.css">
+</head>
+<body>
+
+    <header>
+        <h1>Add Your Restaurant</h1>
+    </header>
+    
+    <section class="form-container">
+        <form id="restaurantForm">
+            <!-- Restaurant Name Field -->
+            <div class="form-group">
+                <label for="restaurantName">Restaurant Name:</label>
+                <input type="text" id="restaurantName" name="restaurantName" placeholder="e.g. Gourmet Delights" pattern="[A-Za-z\s]+" required>
+                <small>Only letters and spaces are allowed</small>
+            </div>
+
+            <!-- Restaurant Address Field -->
+            <div class="form-group">
+                <label for="restaurantAddress">Address:</label>
+                <input type="text" id="restaurantAddress" name="restaurantAddress" placeholder="e.g. 123 Main St, Colombo" required>
+            </div>
+
+            <!-- Select Location from Google Map -->
+            <div class="form-group">
+                <label for="locationSelect">Select Location from Google Map:</label>
+                <button type="button" id="locationSelectBtn" class="location-btn">Select Location</button>
+                <input type="text" id="selectedLocation" name="selectedLocation" placeholder="Selected Location" readonly>
+            </div>
+
+            <!-- Restaurant Phone Number Field -->
+            <div class="form-group">
+                <label for="restaurantPhone">Phone Number:</label>
+                <input type="tel" id="restaurantPhone" name="restaurantPhone" placeholder="e.g. 0775551234" pattern="\d{10}" required>
+                <small>Phone Number must be 10 digits</small>
+            </div>
+
+            <!-- Restaurant Description Field -->
+            <div class="form-group">
+                <label for="restaurantDescription">Description:</label>
+                <textarea id="restaurantDescription" name="restaurantDescription" placeholder="e.g. A fine dining experience with international cuisine." required></textarea>
+            </div>
+
+            <!-- Restaurant Image Upload -->
+            <div class="form-group">
+                <label for="restaurantImage">Upload Restaurant Image:</label>
+                <div class="image-container">
+                    <div class="image-box">
+                        <input type="file" id="restaurantImage" name="restaurantImage" accept="image/*" class="image-input" hidden>
+                        <div class="image-preview-container"></div>
+                        <button type="button" class="upload-btn" id="uploadImageBtn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="form-group">
+                <label>Opening Hours:</label>
+                <div class="hours-container">
+                    <!-- Loop for each day -->
+                    <div class="day">
+                        <label for="monday-toggle">Monday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="monday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="monday-toggle"></label>
+                            <span class="toggle-text" id="monday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="monday-time" style="display: none;">
+                            <input type="time" id="monday-opening" name="monday-opening">
+                            <input type="time" id="monday-closing" name="monday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="tuesday-toggle">Tuesday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="tuesday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="tuesday-toggle"></label>
+                            <span class="toggle-text" id="tuesday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="tuesday-time" style="display: none;">
+                            <input type="time" id="tuesday-opening" name="tuesday-opening">
+                            <input type="time" id="tuesday-closing" name="tuesday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="wednesday-toggle">Wednesday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="wednesday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="wednesday-toggle"></label>
+                            <span class="toggle-text" id="wednesday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="wednesday-time" style="display: none;">
+                            <input type="time" id="wednesday-opening" name="wednesday-opening">
+                            <input type="time" id="wednesday-closing" name="wednesday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="thursday-toggle">Thursday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="thursday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="thursday-toggle"></label>
+                            <span class="toggle-text" id="thursday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="thursday-time" style="display: none;">
+                            <input type="time" id="thursday-opening" name="thursday-opening">
+                            <input type="time" id="thursday-closing" name="thursday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="friday-toggle">Friday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="friday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="friday-toggle"></label>
+                            <span class="toggle-text" id="friday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="friday-time" style="display: none;">
+                            <input type="time" id="friday-opening" name="friday-opening">
+                            <input type="time" id="friday-closing" name="friday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="saturday-toggle">Saturday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="saturday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="saturday-toggle"></label>
+                            <span class="toggle-text" id="saturday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="saturday-time" style="display: none;">
+                            <input type="time" id="saturday-opening" name="saturday-opening">
+                            <input type="time" id="saturday-closing" name="saturday-closing">
+                        </div>
+                    </div>
+                    <div class="day">
+                        <label for="sunday-toggle">Sunday:</label>
+                        <div class="slideThree">
+                            <input type="checkbox" id="sunday-toggle" class="toggle-input">
+                            <label class="toggle-label" for="sunday-toggle"></label>
+                            <span class="toggle-text" id="sunday-status">CLOSED</span>
+                        </div>
+                        <div class="time-inputs" id="sunday-time" style="display: none;">
+                            <input type="time" id="sunday-opening" name="sunday-opening">
+                            <input type="time" id="sunday-closing" name="sunday-closing">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Items Section -->
+            <div class="form-group">
+                <label for="foodItems">Menu Item:</label>
+                <div id="foodItemsContainer">
+                    <!-- Menu item will be dynamically added by JS -->
+                </div>
+                <button type="button" id="addFoodItemBtn" class="add-item-btn">Add New Item</button>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Need help? <a href="mailto:admin@restaurantmanagement.com">Contact the administrator</a></p>
+    </footer>
+
+    <script src="..//js/manager/resM.js"></script>
+</body>
+</html>

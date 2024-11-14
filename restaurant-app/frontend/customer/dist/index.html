@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management - FOOD BASKET</title>
+    <link rel="stylesheet" href="..//css/customer/customer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#">FOOD BASKET</a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="auth-links">
+				
+				<a href="authcustomer.html" class="signup-btn">Sign In | sign Up</a> <!-- Changed href to "signup.html" -->
+			</div>
+
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Restaurants Near You</h1>
+        <div class="search-container">
+            <input id="searchBar" type="text" placeholder="Search for restaurants or food items...">
+            <button id="searchBtn">Search</button>
+        </div>
+    </header>
+
+    <!-- Hero Image Section -->
+    <section class="hero-image">
+        <div class="hero-text">
+            <h1>Discover the Best Restaurants Near You</h1>
+            <p>Find your next great meal with us!</p>
+        </div>
+    </section>
+
+    <!-- Restaurant Grid Section -->
+    <section class="grid-container" id="restaurant-grid"></section>
+
+    <!-- Restaurant Details Modal -->
+    <div class="modal" id="restaurant-details">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="restaurant-name"></h2>
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Overview')">Overview</button>
+                <button class="tablinks" onclick="openTab(event, 'Menu')">Menu</button>
+            </div>
+            <div class="tabcontent" id="Overview"></div>
+            <div class="tabcontent" id="Menu"></div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-checkout-btn" onclick="closeCheckoutModal()">&times;</span>
+            <h2>Checkout</h2>
+            <div id="checkout-details"></div>
+            <button id="payBtn">Pay</button>
+        </div>
+    </div>
+
+    <!-- Fixed Checkout Button with Cart Count -->
+    <div id="cartContainer">
+        <span id="cartCount">0</span>
+        <button id="fixedCheckoutBtn">Checkout</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Welcome to our Restaurant Management system. We offer the best services to help you find the finest restaurants near you. Enjoy browsing through our selection and have a great dining experience!</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Restaurant St., Food City</p>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> support@restaurant.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Restaurant Management. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="..//js/customer/customer.js"></script>
+</body>
+</html>

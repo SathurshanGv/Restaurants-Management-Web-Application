@@ -1,0 +1,1 @@
+"# Apache configuration\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^(.*)$ index.php [QSA,L]" 
